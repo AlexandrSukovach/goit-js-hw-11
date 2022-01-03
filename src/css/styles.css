@@ -1,7 +1,9 @@
-* {
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -12,9 +14,132 @@ body {
   line-height: 1.5;
 }
 
-#search-box {
-  font: inherit;
-  padding: 8px;
-  max-width: 320px;
-  margin-bottom: 16px;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
+
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button.is-hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================= */
+/* .search-form {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  margin-bottom: 24px;
+  background-color: mediumblue;
+} */
+/* .search-form input{
+  cursor: pointer;
+} */
+/* .search-form button{
+  cursor: pointer;
+} */
+
+
+/* .load-more{
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: #fafafa;
+  background-color: rgb(76, 76, 238);
+  border-radius: 3px;
+} */
+
+
+/* .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-width: calc(100vw - 80px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+} */
+
+/* ================================== */
+
+/* .info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.photo-card{
+  border-style: solid;
+ border-radius: 5px;
+ border-width: 1px 3px 4px 2px;
+ border-color: rgb(226, 226, 226);
+ }
+ .photo-card__img{
+   display: block;
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+ } */

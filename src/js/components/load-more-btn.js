@@ -15,7 +15,7 @@ export default class LoadMoreBtn {
    }
    disable() {
       this.refs.button.disabled = true;
-      this.refs.label.textContent = 'loading in progress...';
+      this.refs.label.textContent = 'LOADING IN PROGRESS...';
    }
    show() {
       this.refs.button.classList.remove('is-hidden');

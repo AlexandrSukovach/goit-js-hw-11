@@ -1,4 +1,5 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 const axios = require('axios');
 export default class NewsApiService {
    constructor() {
@@ -32,6 +33,9 @@ export default class NewsApiService {
       this.searchQuery = newQuery;
    };
 };
+
+
+
 
 
 

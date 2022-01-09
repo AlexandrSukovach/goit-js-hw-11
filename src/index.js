@@ -5,6 +5,9 @@ import NewsApiService from './js/news-servis';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import LoadMoreBtn from './js/components/load-more-btn';
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 // ===api key for pixabay==25024610-b715c2d32e80bfb8f3c0998cb===
 
 const refs = {
@@ -67,11 +70,14 @@ function appendArticlesMarkup(hits) {
       return Notify.info("We're sorry, but you've reached the end of search results.");
    }
    refs.hitsContainer.insertAdjacentHTML('beforeend', hitsTpl(hits));
+   // =======SimpleLightbox============
+   let gallery = new SimpleLightbox('.gallery a', { doubleTapZoom: 1.5, captionDelay: 250 });
 };
 
 function clearArticlesContainer() {
    refs.hitsContainer.innerHTML = '';
 };
+
 
 
 

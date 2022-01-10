@@ -67,11 +67,13 @@ function appendArticlesMarkup(hits) {
    } else if (hits.length < pageLength && hits.length > 0) {
       refs.loadMoreBtn.setAttribute('class', 'load-more btn btn-primary button is-hidden');
       refs.hitsContainer.insertAdjacentHTML('beforeend', hitsTpl(hits));
+      // =======SimpleLightbox============
+      let gallery = new SimpleLightbox('.gallery a', { doubleTapZoom: 1.2, captionDelay: 300 });
       return Notify.info("We're sorry, but you've reached the end of search results.");
    }
    refs.hitsContainer.insertAdjacentHTML('beforeend', hitsTpl(hits));
    // =======SimpleLightbox============
-   let gallery = new SimpleLightbox('.gallery a', { doubleTapZoom: 1.5, captionDelay: 250 });
+   let gallery = new SimpleLightbox('.gallery a', { doubleTapZoom: 1.2, captionDelay: 300 });
 };
 
 function clearArticlesContainer() {

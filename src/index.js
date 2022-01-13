@@ -1,4 +1,5 @@
 
+
 import hitsTpl from './templates/articles.hbs';
 import './css/styles.css';
 import NewsApiService from './js/news-servis';
@@ -37,6 +38,8 @@ const loadMoreBtn = new LoadMoreBtn({
    hidden: true,
 });
 
+
+
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', fetchArticles);
 
@@ -60,20 +63,23 @@ function fetchArticles() {
    });
 };
 
+// =======SimpleLightbox============
+let lightbox = new SimpleLightbox('.gallery a', { doubleTapZoom: 1.2, captionDelay: 300 });
+
 function appendArticlesMarkup(hits) {
+
    if (hits.length === 0) {
       refs.loadMoreBtn.setAttribute('class', 'load-more btn btn-primary button is-hidden');
+      lightbox.refresh();
       return Notify.failure('Sorry, there are no images matching your search query. Please try again.');
    } else if (hits.length < pageLength && hits.length > 0) {
       refs.loadMoreBtn.setAttribute('class', 'load-more btn btn-primary button is-hidden');
       refs.hitsContainer.insertAdjacentHTML('beforeend', hitsTpl(hits));
-      // =======SimpleLightbox============
-      let gallery = new SimpleLightbox('.gallery a', { doubleTapZoom: 1.2, captionDelay: 300 });
+      lightbox.refresh();
       return Notify.info("We're sorry, but you've reached the end of search results.");
    }
    refs.hitsContainer.insertAdjacentHTML('beforeend', hitsTpl(hits));
-   // =======SimpleLightbox============
-   let gallery = new SimpleLightbox('.gallery a', { doubleTapZoom: 1.2, captionDelay: 300 });
+   lightbox.refresh();
 };
 
 function clearArticlesContainer() {

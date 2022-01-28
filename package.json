@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://AlexandrSukovach.github.io/goit-js-hw-11",
+  "homepage": "https://AlexandrSukovach.github.io/goit-js-hw-rendering",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-rendering/"
   },
   "repository": {
     "type": "git",

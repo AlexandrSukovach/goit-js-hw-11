@@ -10,17 +10,16 @@ export default class NewsApiService {
    };
 
    // ================async/await================
-   // key 08920fd26073daf08711b94b786e54ca    171aaca622cd75e6df5a814c1d33ccb1
+
    async fetchArticles() {
       // =================axios===================
-      // const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=08920fd26073daf08711b94b786e54ca`)
-      const response = await axios.get(`
-      https://api.themoviedb.org/3/search/movie?api_key=08920fd26073daf08711b94b786e54ca&language=en-US&page=1&include_adult=false&query=${this.searchQuery}`)
+      const response = await axios.get(`https://pixabay.com/api/?key=25024610-b715c2d32e80bfb8f3c0998cb&image_type=photo&orientation=horizontal&safesearch=true&q=${this.searchQuery}&per_page=40&page=${this.page}`)
+
       // console.log(response.data.totalHits)
-      if (this.page === 1 && response.data.total_results !== 0) {
-         Notify.success(`Hooray! We found ${response.data.total_results} images.`);
+      if (this.page === 1 && response.data.hits !== 0) {
+         Notify.success(`Hooray! We found ${response.data.hits} images.`);
       }
-      let hits = response.data.results
+      let hits = response.data.hits
       this.incrementPage();
       return await hits;
    };

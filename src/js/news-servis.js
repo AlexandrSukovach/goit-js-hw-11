@@ -13,7 +13,9 @@ export default class NewsApiService {
    // key 08920fd26073daf08711b94b786e54ca    171aaca622cd75e6df5a814c1d33ccb1
    async fetchArticles() {
       // =================axios===================
-      const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=08920fd26073daf08711b94b786e54ca`)
+      // const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=08920fd26073daf08711b94b786e54ca`)
+      const response = await axios.get(`
+      https://api.themoviedb.org/3/search/movie?api_key=08920fd26073daf08711b94b786e54ca&language=en-US&page=1&include_adult=false&query=${this.searchQuery}`)
       // console.log(response.data.totalHits)
       if (this.page === 1 && response.data.total_results !== 0) {
          Notify.success(`Hooray! We found ${response.data.total_results} images.`);

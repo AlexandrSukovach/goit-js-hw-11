@@ -17,7 +17,7 @@ export default class NewsApiService {
 
       // console.log(response.data.totalHits)
       if (this.page === 1 && response.data.hits !== 0) {
-         Notify.success(`Hooray! We found ${response.data.hits} images.`);
+         Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
       }
       let hits = response.data.hits
       this.incrementPage();

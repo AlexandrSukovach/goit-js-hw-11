@@ -147,3 +147,37 @@ export default class NewsApiService {
 //       this.searchQuery = newQuery;
 //    };
 // };
+
+
+
+// 29.01========================
+// const axios = require('axios');
+// export default class NewsApiService {
+//    constructor() {
+//       this.searchQuery = '';
+//       this.page = 1;
+//       this.reg_page = 0;
+//       this.pageLength = 40;
+//    };
+//    async fetchArticles() {
+//       const response = await axios.get(`https://pixabay.com/api/?key=25024610-b715c2d32e80bfb8f3c0998cb&image_type=photo&orientation=horizontal&safesearch=true&q=${this.searchQuery}&per_page=40&page=${this.page}`)
+//       if (this.page === 1 && response.data.hits !== 0) {
+//          Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+//       }
+//       let hits = response.data.hits
+//       this.incrementPage();
+//       return await hits;
+//    };
+//    incrementPage() {
+//       this.page += 1;
+//    };
+//    resetPage() {
+//       this.page = 1;
+//    };
+//    get query() {
+//       return this.searchQuery;
+//    };
+//    set query(newQuery) {
+//       this.searchQuery = newQuery;
+//    };
+// };
